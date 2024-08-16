@@ -46,7 +46,13 @@ elif option == 2:
     folder_past = input('Send me a path to past: ')
     copy_files(folder_copy, folder_past)
 else:
+    if not os.path.exists("C:\\Users\\Franww\\Documents\\last_downloads"):
+        os.makedirs("C:\\Users\\Franww\\Documents\\last_downloads")
+
     delete_files("C:\\Users\\Franww\\Documents\\last_downloads")
     copy_files("C:\\Users\\Franww\\Downloads", "C:\\Users\\Franww\\Documents\\last_downloads")
+    copy_files("C:\\Users\\Franww\\Desktop", "C:\\Users\\Franww\\Documents\\last_downloads")
     delete_files("C:\\Users\\Franww\\Downloads")
+    delete_files("C:\\Users\\Franww\\Desktop")
+
 print('Finished!!! Enjoy!!!')
